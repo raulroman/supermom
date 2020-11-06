@@ -1,0 +1,30 @@
+<h1 class="my-class"> <%= @title %><h1>
+
+<form>
+  <label>Name:
+    <input name="submitted-name" autocomplete="name">
+  </label>
+  <button>Save</button>
+</form>
+<!-- Form which will send a POST request to the current URL -->
+<form method="post">
+  <label>Name:
+    <input name="submitted-name" autocomplete="name">
+  </label>
+  <button>Save</button>
+</form>
+<!-- Form with fieldset, legend, and label -->
+<form method="post">
+  <fieldset>
+    <legend>Title</legend>
+    <label><input type="radio" name="radio"> Select me</label>
+  </fieldset>
+  <fieldset>      
+        <legend>What is Your Favorite Pet?</legend>      
+        <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>      
+        <input type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>      
+        <input type="checkbox" name="favorite_pet" value="Birds">Birds<br>      
+        <br>      
+        <input type="submit" value="Submit now" />      
+    </fieldset>
+</form>
