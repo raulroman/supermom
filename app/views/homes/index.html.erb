@@ -1,29 +1,78 @@
+<%= image_tag("supermom-sweets.jpg", heigt: 300, width: 300)  %>
 <h1 class="my-class"> <%= @title %><h1>
+<h4>Take your time when filling in your order form. Your order will be processed immediately after payment.<h4>
 
 <form>
-  <label>Name:
+  <label>First Name:
     <input name="submitted-name" autocomplete="name">
   </label>
-  <button>Save</button>
 </form>
 <!-- Form which will send a POST request to the current URL -->
 <form method="post">
-  <label>Name:
+  <label>Last Name:
     <input name="submitted-name" autocomplete="name">
   </label>
-  <button>Save</button>
+</form>
+<form>
+  <label for="email">Email:   
+    <input type="email" id="email" name="email" autocomplete="name">
+  </label>
+</form>
+<form action="/action_page.php">
+  <label for="Flans">Choose a Flan:</label>
+  <select name="Flans" id="flans">
+    <option value="plain">Traditional Flan</option>
+    <option value="coco">Coconut Flan</option>
+    <option value="pumpkin">Pumpking Flan</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
 </form>
 <!-- Form with fieldset, legend, and label -->
 <form method="post">
   <fieldset>
-    <legend>Title</legend>
-    <label><input type="radio" name="radio"> Select me</label>
+    <legend>Chocolate covered sweets</legend>
+    <label><input type="radio" name="radio"> Half Dozen Chocolate Covered Pretzels
+    <br>
+    <input type="radio" name="radio"> Dozen Chocolate Covered Pretzels
+    <br>
+    <input type="radio" name="radio"> Half Dozen Chocolate Covered Oreos
+    <br>
+    <input type="radio" name="radio"> Dozen Chocolate Covered Oreos
+    <br>
+    <input type="radio" name="radio"> Half Dozen Chocolate Covered Rice Krispies
+    <br>
+    <input type="radio" name="radio"> Dozen Chocolate Covered Rice Krispies
+    <br>
+    <input type="radio" name="radio"> 1 Sweet treats set (Holiday Themed)
+    <br>
+    <input type="radio" name="radio"> 5 Sweet treats set (Holiday Themed)
+    <br>
+    <input type="radio" name="radio"> 5 Sweet treats set (Holiday Themed)
+    <br>  
+    <%= image_tag("assortedsweets.jpg", heigt: 200, width: 200)  %>
+    <input type="submit" value="Submit now" />      
+
+    </label>
+
   </fieldset>
   <fieldset>      
-        <legend>What is Your Favorite Pet?</legend>      
-        <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>      
-        <input type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>      
-        <input type="checkbox" name="favorite_pet" value="Birds">Birds<br>      
+        <legend>Choose your preferred Flan</legend>      
+        <input type="checkbox" name="favorite_flan" value="Plain">Traditional Flan<br>      
+        <input type="checkbox" name="favorite_flan" value="Coco">Coconut Flan (contains coconut flakes)<br>      
+        <input type="checkbox" name="favorite_flan" value="Pumpkin">Pumpkin Flan (Made with real pumpkin)<br>      
+        <br>      
+    <%= image_tag("max-flan.jpg", heigt: 200, width: 200)  %>
+
+        <input type="submit" value="Submit now" />      
+    </fieldset>
+    <br>
+    <fieldset>      
+        <legend>Sofrito</legend>      
+        <input type="checkbox" name="Small Sofrito" value="SS">Small Sofrito(16oz)<br>      
+        <input type="checkbox" name="Large Sofrito" value="LS">Large Sofrito(32oz)<br>            
+    <%= image_tag("sofrito.jpg", heigt: 200, width: 200)  %>  
+
         <br>      
         <input type="submit" value="Submit now" />      
     </fieldset>
