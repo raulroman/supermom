@@ -1,12 +1,10 @@
-<%= image_tag("supermom-sweets.jpg", heigt: 300, width: 300)  %>
-<h1 class="my-class"> <%= @title %><h1>
-<h4>Take your time when filling in your order form. Your order will be processed immediately after payment.<h4>
-
-<form>
+<h1 class="image-one"> <%= image_tag("supermom-sweets.jpg", heigt: 300, width: 300)  %> 
+<div class="my-class"> <%= @title %></div>
+<h4 class="my-class">Take your time when filling in your order form. Your order will be processed immediately after payment.<h4>
+<div class="user-info">
   <label>First Name:
     <input name="submitted-name" autocomplete="name">
   </label>
-</form>
 <!-- Form which will send a POST request to the current URL -->
 <form method="post">
   <label>Last Name:
@@ -14,24 +12,17 @@
   </label>
 </form>
 <form>
-  <label for="email">Email:   
+  <label >Email Address:   
     <input type="email" id="email" name="email" autocomplete="name">
   </label>
 </form>
-<form action="/action_page.php">
-  <label for="Flans">Choose a Flan:</label>
-  <select name="Flans" id="flans">
-    <option value="plain">Traditional Flan</option>
-    <option value="coco">Coconut Flan</option>
-    <option value="pumpkin">Pumpking Flan</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+</div>
+<br>
 <!-- Form with fieldset, legend, and label -->
+<div class="chocolate-sweets">
 <form method="post">
   <fieldset>
-    <legend>Chocolate covered sweets</legend>
+   <legend><h1>Chocolate covered sweets</h1></legend>
     <label><input type="radio" name="radio"> Half Dozen Chocolate Covered Pretzels
     <br>
     <input type="radio" name="radio"> Dozen Chocolate Covered Pretzels
@@ -50,30 +41,46 @@
     <br>
     <input type="radio" name="radio"> 5 Sweet treats set (Holiday Themed)
     <br>  
-    <%= image_tag("assortedsweets.jpg", heigt: 200, width: 200)  %>
+
+   <div class="image-one"> <%= image_tag("assortedsweets.jpg", height: 300, width: 250) %> </div>
+   <%# <img src="assets/assortedsweets.jpg" class="img-rounded" height="300" width="250">  %>
     <input type="submit" value="Submit now" />      
 
     </label>
 
   </fieldset>
+  </div>
+  <div class="flan-text">
   <fieldset>      
-        <legend>Choose your preferred Flan</legend>      
+      <div class="form-group">
+        <label for="sel1">How many:</label>
+         <select class="form-control" id="sel1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+         </select>
+      </div>
+        <legend><h1>Choose your preferred Flan</h1></legend>      
         <input type="checkbox" name="favorite_flan" value="Plain">Traditional Flan<br>      
         <input type="checkbox" name="favorite_flan" value="Coco">Coconut Flan (contains coconut flakes)<br>      
         <input type="checkbox" name="favorite_flan" value="Pumpkin">Pumpkin Flan (Made with real pumpkin)<br>      
         <br>      
-    <%= image_tag("max-flan.jpg", heigt: 200, width: 200)  %>
+      <div class="image-two"> <%= image_tag("max-flan.jpg", height: 300, width: 250, )  %> </div>
 
         <input type="submit" value="Submit now" />      
     </fieldset>
+    </div>
     <br>
+    <div class="sofrito">
     <fieldset>      
-        <legend>Sofrito</legend>      
-        <input type="checkbox" name="Small Sofrito" value="SS">Small Sofrito(16oz)<br>      
-        <input type="checkbox" name="Large Sofrito" value="LS">Large Sofrito(32oz)<br>            
-    <%= image_tag("sofrito.jpg", heigt: 200, width: 200)  %>  
+        <legend><h1>Sofrito</h1></legend>      
+        <input type="checkbox" name="Small Sofrito" value="SS">Small Sofrito (16oz)<br>      
+        <input type="checkbox" name="Large Sofrito" value="LS">Large Sofrito (32oz)<br>            
+      <div class="image-three"> <%= image_tag("sofrito.jpg", height: 300, width: 250)  %>  </div>
 
         <br>      
         <input type="submit" value="Submit now" />      
     </fieldset>
+    </div>
 </form>
