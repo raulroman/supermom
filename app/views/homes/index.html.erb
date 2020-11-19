@@ -27,13 +27,13 @@
 <form action="/" method="get">
   <div class="user-info">
     <label>First Name:
-      <input name="submitted-name" autocomplete="name">
+      <input value="" name="first_name" autocomplete="name">
     </label>
     <label>Last Name:
-      <input name="submitted-name" autocomplete="name">
+      <input value="" name="last_name" autocomplete="name">
     </label>
     <label >Email Address:   
-      <input type="email" id="email" name="email" autocomplete="name">
+      <input value="" type="email" id="email" name="email" autocomplete="name">
     </label>
   </div>
   <fieldset class="form-control">
@@ -60,38 +60,41 @@
     <fieldset class="form-control">      
       
         <legend><h1>Choose your preferred Flan</h1></legend>      
-        <input value="1" type="checkbox" name="favorite_flan" value="Plain">Traditional Flan
+        <input value="1" type="checkbox" name="tradional_flan">Traditional Flan
         <div class="form-group">
           <label> Qty
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
+            <select class="form-control" name="traditional_flan_quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
             </select>
           </label>
       </div>
         <br>      
-        <input value="1" type="checkbox" name="favorite_flan" value="Coco">Coconut Flan (contains coconut flakes)
+        <input value="1" type="checkbox" name="coconut_flan">Coconut Flan (contains coconut flakes)
         <div class="form-group">
           <label> Qty
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
+            <select class="form-control" name="coconut_flan_quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
             </select>
           </label>
         </div>
         <br>      
-        <input value="1" type="checkbox" name="favorite_flan" value="Pumpkin">Pumpkin Flan (Made with real pumpkin)
+        <input value="1" type="checkbox" name="pumpkin_flan">Pumpkin Flan (Made with real pumpkin)
         <div class="form-group">
           <label> Qty
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
+            <select class="form-control" name="pumpkin_flan_quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
             </select>
           </label>
         </div>
@@ -106,8 +109,8 @@
     <div class="sofrito">
     <fieldset class="form-control">      
         <legend><h1>Sofrito</h1></legend>      
-        <input value="1" type="checkbox" name="Small Sofrito" value="SS">Small Sofrito (16oz)<br>      
-        <input value="1" type="checkbox" name="Large Sofrito" value="LS">Large Sofrito (32oz)<br>            
+        <input value="1" type="checkbox" name="Small Sofrito">Small Sofrito (16oz)<br>      
+        <input value="1" type="checkbox" name="Large Sofrito">Large Sofrito (32oz)<br>            
       <div class="image-container"> <%= image_tag("sofrito.jpg", :class => "image-four")  %>  </div>
    <%# <img src="assets/assortedsweets.jpg" class="img-rounded" height="300" width="250">  %>
     <input type="submit" value="Submit now" /> 
