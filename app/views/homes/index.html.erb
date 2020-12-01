@@ -1,30 +1,124 @@
-<h1 class="my-class"> <%= @title %><h1>
+<div class="image-container">
+  <%= image_tag("supermom-logo.jpg", :class => "image-one")  %> 
+</div>
 
-<form>
-  <label>Name:
-    <input name="submitted-name" autocomplete="name">
-  </label>
-  <button>Save</button>
-</form>
+<%#= form_with(url: "/", method: "get") do |f| %>
+<%#= f.label :First_name %>
+  <%#= f.text_field :first_name %>
+  <%#= f.label :Last_name %>
+  <%#= f.text_field :last_name %>
+  <%#= f.label :email %>
+  <%#= f.email_field :email %>
+  <%#= f.label :half_dozen_chocolate_covered_pretzels%>
+  <%#= f.check_box :half_dozen_chocolate_covered_pretzels %>
+  <%#= submit_tag("Submit") %>
+<%# end %>
+<div class="my-class"> <%= @title %></div>
+  <h4 class="my-class">Take your time when filling in your order form. Your order will be processed immediately after payment.<h4>
+
+
+
 <!-- Form which will send a POST request to the current URL -->
-<form method="post">
-  <label>Name:
-    <input name="submitted-name" autocomplete="name">
-  </label>
-  <button>Save</button>
-</form>
-<!-- Form with fieldset, legend, and label -->
-<form method="post">
-  <fieldset>
-    <legend>Title</legend>
-    <label><input type="radio" name="radio"> Select me</label>
-  </fieldset>
-  <fieldset>      
-        <legend>What is Your Favorite Pet?</legend>      
-        <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>      
-        <input type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>      
-        <input type="checkbox" name="favorite_pet" value="Birds">Birds<br>      
+
+
+<br>
+<!-- My Form starts here -->
+<div class="chocolate-sweets">
+<form action="/" method="get">
+  <div class="user-info">
+    <label>First Name:
+      <input value="" name="first_name" autocomplete="name">
+    </label>
+    <label>Last Name:
+      <input value="" name="last_name" autocomplete="name">
+    </label>
+    <label >Email Address:   
+      <input value="" type="email" id="email" name="email" autocomplete="name">
+    </label>
+  </div>
+  <fieldset class="form-control">
+   <legend><h1>Chocolate covered sweets</h1></legend>
+    <input value="1" type="checkbox" name="hdccp"> Half Dozen Chocolate Covered Pretzels
+    <br>
+    <input value="1" type="checkbox" name="dccp"> Dozen Chocolate Covered Pretzels
+    <br>
+    <input value="1" type="checkbox" name="hdcco"> Half Dozen Chocolate Covered Oreos
+    <br>
+    <input value="1" type="checkbox" name="dcco"> Dozen Chocolate Covered Oreos
+    <br>
+    <input value="1" type="checkbox" name="hdccrk"> Half Dozen Chocolate Covered Rice Krispies
+    <br>
+    <input value="1" type="checkbox" name="dccrk"> Dozen Chocolate Covered Rice Krispies
+    <br>
+    <input value="1" type="checkbox" name="onests"> 1 Sweet treats set (Holiday Themed)
+    <br>
+    <input value="1" type="checkbox" name="fivests"> 5 Sweet treats set (Holiday Themed)
+    <br>
+    <div class="image-container"> <%= image_tag("assortedsweets.jpg", :class => "image-two") %> </div>
+
+   <div class="flan-text">
+    <fieldset class="form-control">      
+      
+        <legend><h1>Choose your preferred Flan</h1></legend>      
+        <input value="1" type="checkbox" name="tradional_flan">Traditional Flan
+        <div class="form-group">
+          <label> Qty
+            <select class="form-control" name="traditional_flan_quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+      </div>
         <br>      
-        <input type="submit" value="Submit now" />      
+        <input value="1" type="checkbox" name="coconut_flan">Coconut Flan (contains coconut flakes)
+        <div class="form-group">
+          <label> Qty
+            <select class="form-control" name="coconut_flan_quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+        </div>
+        <br>      
+        <input value="1" type="checkbox" name="pumpkin_flan">Pumpkin Flan (Made with real pumpkin)
+        <div class="form-group">
+          <label> Qty
+            <select class="form-control" name="pumpkin_flan_quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+        </div>
+        <br>      
+        <br>      
+        <div class="image-container"> <%= image_tag("flan.jpg", :class => "image-three")  %> 
+        </div>
+
     </fieldset>
+    </div>
+    <br>
+    <div class="sofrito">
+    <fieldset class="form-control">      
+        <legend><h1>Sofrito</h1></legend>      
+        <input value="1" type="checkbox" name="Small Sofrito">Small Sofrito (16oz)<br>      
+        <input value="1" type="checkbox" name="Large Sofrito">Large Sofrito (32oz)<br>            
+      <div class="image-container"> <%= image_tag("sofrito.jpg", :class => "image-four")  %>  </div>
+   <%# <img src="assets/assortedsweets.jpg" class="img-rounded" height="300" width="250">  %>
+    <input type="submit" value="Submit now" /> 
+   <!-- My Form ends here -->
+
+  </fieldset>
+  </div>
+    
+    </fieldset>
+    </div>
 </form>
