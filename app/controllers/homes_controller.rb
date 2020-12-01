@@ -10,6 +10,7 @@ class HomesController < ApplicationController
             :message => 'Your order is pending'
         }
         @title = "Order Form"
+        # create a conditional for email
         OrderCompletedMailer.new_order_email(@order).deliver
     end
 end
