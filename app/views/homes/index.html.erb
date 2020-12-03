@@ -2,17 +2,6 @@
   <%= image_tag("supermom-logo.jpg", :class => "image-one")  %> 
 </div>
 
-<%#= form_with(url: "/", method: "get") do |f| %>
-<%#= f.label :First_name %>
-  <%#= f.text_field :first_name %>
-  <%#= f.label :Last_name %>
-  <%#= f.text_field :last_name %>
-  <%#= f.label :email %>
-  <%#= f.email_field :email %>
-  <%#= f.label :half_dozen_chocolate_covered_pretzels%>
-  <%#= f.check_box :half_dozen_chocolate_covered_pretzels %>
-  <%#= submit_tag("Submit") %>
-<%# end %>
 <div class="my-class"> <%= @title %></div>
   <h4 class="my-class">Take your time when filling in your order form. Your order will be processed immediately after payment.<h4>
 
@@ -24,7 +13,7 @@
 <br>
 <!-- My Form starts here -->
 <div class="chocolate-sweets">
-<form action="/" method="get">
+<form action="/place_order" method="post">
   <div class="user-info">
     <label>First Name:
       <input value="" name="first_name" autocomplete="name">
