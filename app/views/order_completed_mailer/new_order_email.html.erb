@@ -4,19 +4,34 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>You got a new order from !</p>
+    <h1>You have a new order from !</h1>
     <p>
     Order details<br>
     --------------------------
     </p>
-    
+    <p><%= @order["Order_Date"] %></p>
+    <p><%= @order["first_name"] %></p>
+    <p><%= @order["last_name"] %></p>
+    <p><%= @order["email"] %></p>
+    <p><%= @order["phone_number"] %></p>
+    <p><%= @abbreviated_names["hdccp"] %></p>
+    <p><%= @abbreviated_names["dccp"] %></p>
+    <p><%= @abbreviated_names["hdcco"] %></p>
+    <p><%= @abbreviated_names["dcco"] %></p>
+    <p><%= @abbreviated_names["hdccrk"] %></p>
+    <p><%= @abbreviated_names["dccrk"] %></p>
+    <p><%= @abbreviated_names["onests"] %></p>
+    <p><%= @abbreviated_names["fivests"] %></p>
+    <p><%= @order["coconut_flan"] %></p>
+    <br>
+    <p><%= @order["Delivered_Date"] %></p>
+    <p><%= @order["Order_total"] %></p>
+
+
+
     <p>
     Message:<br>
     ----------
     </p>
-    <p><%= @order["first_name"] %></p>
-    <p><%= @order["last_name"] %></p>
-    <p><%= @abbreviated_names["hdcco"] %></p>
-    <p><%= @abbreviated_names["hdccp"] %></p>
   </body>
 </html>

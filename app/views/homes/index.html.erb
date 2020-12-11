@@ -24,16 +24,19 @@
     <label >Email Address:   
       <input value="" type="email" id="email" name="email" autocomplete="name">
     </label>
+    <label >Phone Number:   
+      <input value="" type="phone_number" name="phone_number" autocomplete="number">
+    </label>
   </div>
   <fieldset class="form-control">
    <legend><h1>Chocolate covered sweets</h1></legend>
-    <input value="1" type="checkbox" name="hdccp"> Half Dozen Chocolate Covered Pretzels
+    <input value="0" type="checkbox" name="hdccp"> Half Dozen Chocolate Covered Pretzels
     <br>
     <input value="1" type="checkbox" name="dccp"> Dozen Chocolate Covered Pretzels
     <br>
     <input value="1" type="checkbox" name="hdcco"> Half Dozen Chocolate Covered Oreos
     <br>
-    <input value="1" type="checkbox" name="dcco"> Dozen Chocolate Covered Oreos
+    <input value="0" type="checkbox" name="dcco"> Dozen Chocolate Covered Oreos
     <br>
     <input value="1" type="checkbox" name="hdccrk"> Half Dozen Chocolate Covered Rice Krispies
     <br>
@@ -102,12 +105,19 @@
         <input value="1" type="checkbox" name="Large Sofrito">Large Sofrito (32oz)<br>            
       <div class="image-container"> <%= image_tag("sofrito.jpg", :class => "image-four")  %>  </div>
    <%# <img src="assets/assortedsweets.jpg" class="img-rounded" height="300" width="250">  %>
+   <br>
+      <label for="start">Desired Delivery Date:</label>
+      <input type="date" id="start" name="desired_delivery_date"
+       value="<%= @todays_date %>"
+       min="<%= @min_date %>" max="<%= @max_date %>">
     <input type="submit" value="Submit now" /> 
    <!-- My Form ends here -->
 
   </fieldset>
   </div>
     
-    </fieldset>
+ 
+  
+  </fieldset>
     </div>
 </form>

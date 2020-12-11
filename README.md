@@ -21,5 +21,7 @@ Things you may want to cover:
 
 - Deployment instructions
 
+- commit code
+
 - ...
 - git push https://git.heroku.com/dev-supermomsweets.git HEAD:master

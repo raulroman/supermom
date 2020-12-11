@@ -2,7 +2,10 @@ class HomesController < ApplicationController
     skip_before_action :verify_authenticity_token
 
     def index
-        @title = "Order Form"
+        @title = "Order Form" 
+        @todays_date = Date.today
+        @min_date = @todays_date + 2
+        @max_date = @todays_date + 1.year
     end
 
     def place_order
