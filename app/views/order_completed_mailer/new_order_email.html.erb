@@ -9,22 +9,18 @@
     Order details<br>
     --------------------------
     </p>
+    <%# <%= binding.pry %>
+    <% @order.each do |key, value| %>
+    <%= @abbreviated_names[key] if value === "1" %> 
+    </br>
+    <% end %>
     <p><%= @order["Order_Date"] %></p>
     <p><%= @order["first_name"] %></p>
     <p><%= @order["last_name"] %></p>
     <p><%= @order["email"] %></p>
     <p><%= @order["phone_number"] %></p>
-    <p><%= @abbreviated_names["hdccp"] %></p>
-    <p><%= @abbreviated_names["dccp"] %></p>
-    <p><%= @abbreviated_names["hdcco"] %></p>
-    <p><%= @abbreviated_names["dcco"] %></p>
-    <p><%= @abbreviated_names["hdccrk"] %></p>
-    <p><%= @abbreviated_names["dccrk"] %></p>
-    <p><%= @abbreviated_names["onests"] %></p>
-    <p><%= @abbreviated_names["fivests"] %></p>
-    <p><%= @order["coconut_flan"] %></p>
     <br>
-    <p><%= @order["Delivered_Date"] %></p>
+    <p><%= @order["desired_delivery_date"] %></p>
     <p><%= @order["Order_total"] %></p>
 
 
