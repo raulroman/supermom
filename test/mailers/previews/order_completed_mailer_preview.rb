@@ -1,30 +1,8 @@
 # Preview all emails at http://localhost:3000/rails/mailers/order_completed_mailer
 class OrderCompletedMailerPreview < ActionMailer::Preview
     def order_completed_mailer
-        params = {
-            "Order_Date" => "Order date 12/11/2020",
-            "first_name"=>"Raul",
-            "last_name"=>"Roman",
-            "email"=>"email@email.com",
-            "phone_number" => "718-782-8803",
-            "hdccp"=>"1",
-            "dccp"=>"1",
-            "hdcco"=>"1",
-            "dcco"=>"1",
-            "hdccrk"=>"1",
-            "dccrk"=>"1",
-            "onests"=>"1",
-            "fivests"=>"1",
-            "tradional_flan"=>"1",
-            "traditional_flan_quantity"=>"1",
-            "coconut_flan"=>"1",
-            "coconut_flan_quantity"=>"1",
-            "pumpkin_flan"=>"1",
-            "pumpkin_flan_quantity"=>"1",
-            "small_sofrito"=>"1",
-            "large_sofrito"=>"1",
-            "Delivered_Date" => "Deliver by 12/25/20",
-            "Order_total" => "Order Total = $130" }
-        OrderCompletedMailer.new_order_email(params)
+        params = {"first_name"=>"Troy", "last_name"=>"Leach", "email"=>"Raulromanjr@gmail.com", "phone_number"=>"718-791-9878", "desired_delivery_date"=>"2021-01-20", "hdccp"=>"2", "dccp"=>"3", "hdcco"=>"", "dcco"=>"", "hdccrk"=>"0", "dccrk"=>"0", "onests"=>"11", "fivests"=>"12", "traditional_flan"=>"4", "coconut_flan"=>"", "pumpkin_flan"=>"0", "small_sofrito"=>"", "large_sofrito"=>"4", "comment"=>"    WW10"}
+        params2 = {"first_name"=>"Troy", "last_name"=>"Leach", "email"=>"Raulromanjr@gmail.com", "phone_number"=>"718-791-9878", "desired_delivery_date"=>"2021-01-20", "hdccp"=>"2", "dccp"=>"3", "hdcco"=>"2", "dcco"=>"4", "hdccrk"=>"7", "dccrk"=>"9", "onests"=>"11", "fivests"=>"12", "traditional_flan"=>"4", "coconut_flan"=>"5", "pumpkin_flan"=>"6", "small_sofrito"=>"3", "large_sofrito"=>"4", "comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+        OrderCompletedMailer.new_order_email(params2)
     end
 end

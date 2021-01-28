@@ -10,6 +10,9 @@ class OrderCompletedMailer < ApplicationMailer
             "dccrk" => "Dozen Chocolate Covered Rice Krispies",
             "onests" => "1 Sweet treats set",
             "fivests" => "5 Sweet treats set",
+            "traditional_flan" => "Traditional Flan",
+            "coconut_flan" => "Coconut Flan",
+            "pumpkin_flan" => "Pumpkin Flan",
             "small_sofrito" => "Small Sofrito",
             "large_sofrito" => "Large Sofrito"}
         @order = order

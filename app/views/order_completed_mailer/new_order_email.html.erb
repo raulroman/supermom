@@ -9,25 +9,26 @@
     Order details<br>
     --------------------------
     </p>
+    <%#= binding.pry %>
+    <p>Client Name: <%= @order["first_name"] %>
+    <%= @order["last_name"] %></p>
+    <p>Client Email: <%= @order["email"] %></p>
+    <p>Client Phone: <%= @order["phone_number"] %></p>
+    <p>Desired Delivery Date: <%= @order["desired_delivery_date"].to_date.strftime("%b %d %Y")  %></p>
+
     <%# <%= binding.pry %>
+    <p> Order: <%= @abbreviated_names[@order] %></p>
+ 
     <% @order.each do |key, value| %>
-    <%= @abbreviated_names[key] if value === "1" %> 
-    </br>
+      <% if @abbreviated_names[key] && !value.empty? && value != "0" %>
+        <li style="margin-left:25px">
+          <%= "#{@abbreviated_names[key]} - #{value}" %>
+        </li>
+      <% end %>
     <% end %>
-    <p><%= @order["Order_Date"] %></p>
-    <p><%= @order["first_name"] %></p>
-    <p><%= @order["last_name"] %></p>
-    <p><%= @order["email"] %></p>
-    <p><%= @order["phone_number"] %></p>
-    <br>
-    <p><%= @order["desired_delivery_date"] %></p>
     <p><%= @order["Order_total"] %></p>
-
-
-
-    <p>
-    Message:<br>
-    ----------
-    </p>
+    
+    <p>Message from client:</p>
+     <p style="margin-left:25px"><%= @order["comment"] %></p>
   </body>
 </html>
