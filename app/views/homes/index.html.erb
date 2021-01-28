@@ -2,17 +2,6 @@
   <%= image_tag("supermom-logo.jpg", :class => "image-one")  %> 
 </div>
 
-<%#= form_with(url: "/", method: "get") do |f| %>
-<%#= f.label :First_name %>
-  <%#= f.text_field :first_name %>
-  <%#= f.label :Last_name %>
-  <%#= f.text_field :last_name %>
-  <%#= f.label :email %>
-  <%#= f.email_field :email %>
-  <%#= f.label :half_dozen_chocolate_covered_pretzels%>
-  <%#= f.check_box :half_dozen_chocolate_covered_pretzels %>
-  <%#= submit_tag("Submit") %>
-<%# end %>
 <div class="my-class"> <%= @title %></div>
   <h4 class="my-class">Take your time when filling in your order form. Your order will be processed immediately after payment.<h4>
 
@@ -23,84 +12,120 @@
 
 <br>
 <!-- My Form starts here -->
-<div class="chocolate-sweets">
-<form action="/" method="get">
-  <div class="user-info">
-    <label>First Name:
-      <input value="" name="first_name" autocomplete="name">
-    </label>
-    <label>Last Name:
-      <input value="" name="last_name" autocomplete="name">
-    </label>
-    <label >Email Address:   
-      <input value="" type="email" id="email" name="email" autocomplete="name">
-    </label>
-  </div>
-  <fieldset class="form-control">
-   <legend><h1>Chocolate covered sweets</h1></legend>
-    <input value="1" type="checkbox" name="hdccp"> Half Dozen Chocolate Covered Pretzels
-    <br>
-    <input value="1" type="checkbox" name="dccp"> Dozen Chocolate Covered Pretzels
-    <br>
-    <input value="1" type="checkbox" name="hdcco"> Half Dozen Chocolate Covered Oreos
-    <br>
-    <input value="1" type="checkbox" name="dcco"> Dozen Chocolate Covered Oreos
-    <br>
-    <input value="1" type="checkbox" name="hdccrk"> Half Dozen Chocolate Covered Rice Krispies
-    <br>
-    <input value="1" type="checkbox" name="dccrk"> Dozen Chocolate Covered Rice Krispies
-    <br>
-    <input value="1" type="checkbox" name="onests"> 1 Sweet treats set (Holiday Themed)
-    <br>
-    <input value="1" type="checkbox" name="fivests"> 5 Sweet treats set (Holiday Themed)
-    <br>
-    <div class="image-container"> <%= image_tag("assortedsweets.jpg", :class => "image-two") %> </div>
 
+<form action="/place_order" method="post">
+<div class="chocolate-sweets">
+    <div>
+      <label>First Name:
+        <input value="" name="first_name" autocomplete="name">
+      </label>
+      <label>Last Name:
+        <input value="" name="last_name" autocomplete="name">
+      </label>
+      <label >Email Address:   
+        <input value="" type="email" id="email" name="email" autocomplete="name">
+      </label>
+      <br>
+      <label >Phone Number:   
+        <input value="" type="phone_number" name="phone_number" autocomplete="number">
+      </label>
+        <label for="start">Desired Pick up or Delivery Date:</label>
+        <input type="date" id="start" name="desired_delivery_date"
+        value="<%= @todays_date %>"
+        min="<%= @min_date %>" max="<%= @max_date %>">
+    </div>
+  </div>
+
+  <div class="valentines-day-tins">
+    <fieldset class="form-control">      
+        <h1>Valentines day Special</h1> 
+        <h3>Small Valentines tin (Qty) 
+        <input value="" type="number" name="small_tin" min="0" max="100"><br>
+        </h3>  
+        <div class="image-container"> <%= image_tag("small-tin.jpg", :class => "image-four")  %>  </div>  
+        <h3>Large Valentines tin (Qty)  
+        <input value="" type="number" name="large_tin" min="0" max="100"><br>
+        </h3>           
+      <div class="image-container"> <%= image_tag("large-tin.jpg", :class => "image-four")  %>  </div>
+  </div>
+    <br>
+
+  <fieldset class="form-control">
+  <div class="heart-shaped-bombs">
+   <h1>Heart Shaped Cocoa Bombs</h1>
+   <h3>
+    Milk Chocolate (Qty)<input value="hdccp" type="number" name="milk" min="0" max="100"> 
+    <br>
+    Dark Chocolate (Qty)<input value="dccp" type="number" name="darkk" min="0" max="100"> 
+    <br>
+    White Chocolate (Qty)<input value="hdcco" type="number" name="white" min="0" max="100"> 
+    <br>
+    Caramel Cream (Qty)<input value="dcco" type="number" name="caramel" min="0" max="100"> 
+    <br>
+    French Vanilla (Qty)<input value="hdccrk" type="number" name="French" min="0" max="100"> 
+    <br>
+    Cookies and Cream (Qty)<input value="dccrk" type="number" name="cookie" min="0" max="100"> 
+    <br> 
+    </h3>
+    <br>
+    <div class="image-container"> <%= image_tag("heart-shaped-coco-bombs.jpg", :class => "image-two") %> </div>
+  </div>
+
+  <div class="classic-treats">
+    <fieldset class="form-control">      
+        <h1>Classic Strawberry Box or Bouquet</h1> 
+        <h3>Classic Strawberry Box (Qty) 
+        <input value="" type="number" name="small_tin" min="0" max="100"><br> 
+        </h3>
+        <div class="image-container"> <%= image_tag("classic-strawberry-box.jpg", :class => "image-four")  %>  </div>  
+        <h3>Bouquet of Strawberries (Qty)  
+        <input value="" type="number" name="large_tin" min="0" max="100"><br> 
+        </h3>           
+      <div class="image-container"> <%= image_tag("supermom-bouquet.jpg", :class => "image-four")  %>  </div>
+  </div>    
+    <br>
+
+  <fieldset class="form-control">
+  <div class="chocolate-sweets">
+   <h1>Chocolate covered sweets</h1>
+   <h3>
+    Half Dozen Chocolate Covered Pretzels (Qty)<input value="hdccp" type="number" name="hdccp" min="0" max="100"> 
+    <br>
+    Dozen Chocolate Covered Pretzels (Qty)<input value="dccp" type="number" name="dccp" min="0" max="100"> 
+    <br>
+    Half Dozen Chocolate Covered Oreos (Qty)<input value="hdcco" type="number" name="hdcco" min="0" max="100"> 
+    <br>
+    Dozen Chocolate Covered Oreos (Qty)<input value="dcco" type="number" name="dcco" min="0" max="100"> 
+    <br>
+    Half Dozen Chocolate Covered Rice Krispies (Qty)<input value="hdccrk" type="number" name="hdccrk" min="0" max="100"> 
+    <br>
+    Dozen Chocolate Covered Rice Krispies (Qty)<input value="dccrk" type="number" name="dccrk" min="0" max="100"> 
+    <br>
+    1 Sweet treats set (Holiday Themed) (Qty)<input value="" type="number" name="onests" min="0" max="100"> 
+    <br>
+    5 Sweet treats set (Holiday Themed) (Qty)<input value="" type="number" name="fivests" min="0" max="100"> 
+    <br>
+    </h3>
+    <div class="image-container"> <%= image_tag("chocolate-assorted-sweets.jpg", :class => "image-two") %> </div>
+  </div>
    <div class="flan-text">
     <fieldset class="form-control">      
       
-        <legend><h1>Choose your preferred Flan</h1></legend>      
-        <input value="1" type="checkbox" name="tradional_flan">Traditional Flan
-        <div class="form-group">
-          <label> Qty
-            <select class="form-control" name="traditional_flan_quantity">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </label>
-      </div>
-        <br>      
-        <input value="1" type="checkbox" name="coconut_flan">Coconut Flan (contains coconut flakes)
-        <div class="form-group">
-          <label> Qty
-            <select class="form-control" name="coconut_flan_quantity">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </label>
-        </div>
-        <br>      
-        <input value="1" type="checkbox" name="pumpkin_flan">Pumpkin Flan (Made with real pumpkin)
-        <div class="form-group">
-          <label> Qty
-            <select class="form-control" name="pumpkin_flan_quantity">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </label>
-        </div>
-        <br>      
-        <br>      
-        <div class="image-container"> <%= image_tag("flan.jpg", :class => "image-three")  %> 
+        <h1>Choose your preferred Flan</h1>
+        <h3>Traditional Flan (Qty)  
+        <input value="0" type="number" name="traditional_flan" min="0" max="100">
+        <br>
+        Queso Flan (Qty)  
+        <input value="0" type="number" name="queso_flan" min="0" max="100">
+        <br>  
+        Coconut Flan (Qty)  
+        <input value="0" type="number" name="coconut_flan" min="0" max="100">
+        <br>   
+        Pumpkin Flan (Qty)  
+        <input value="0" placeholder="0" type="number" name="pumpkin_flan" min="0" max="100">
+        <br>  
+        </h3>         
+        <div class="image-container"> <%= image_tag("heart-shape-flan.jpeg", :class => "image-three")  %> 
         </div>
 
     </fieldset>
@@ -108,17 +133,25 @@
     <br>
     <div class="sofrito">
     <fieldset class="form-control">      
-        <legend><h1>Sofrito</h1></legend>      
-        <input value="1" type="checkbox" name="Small Sofrito">Small Sofrito (16oz)<br>      
-        <input value="1" type="checkbox" name="Large Sofrito">Large Sofrito (32oz)<br>            
-      <div class="image-container"> <%= image_tag("sofrito.jpg", :class => "image-four")  %>  </div>
-   <%# <img src="assets/assortedsweets.jpg" class="img-rounded" height="300" width="250">  %>
+        <legend><h1>Puerto Rican style Sofrito</h1></legend> 
+        <label for="small_sofrito">Small sofrito (16oz) (Qty)</label>  
+        <input value="" type="number" name="small_sofrito" min="0" max="100"><br>   
+        <label for="large_sofrito">Large sofrito (32oz) (Qty)</label>  
+        <input value="" type="number" name="large_sofrito" min="0" max="100"><br>            
+      <div class="image-container"> <%= image_tag("puerto-rican-sofrito", :class => "image-four")  %>  </div>
+    <br>
+    <div class="order-details"> 
+      Message/Promo code: 
+      <textarea rows="4" cols="50" name="comment">
+      </textarea>
+    </div>
+
+    <br>
     <input type="submit" value="Submit now" /> 
    <!-- My Form ends here -->
 
   </fieldset>
   </div>
-    
-    </fieldset>
+  </fieldset>
     </div>
 </form>
